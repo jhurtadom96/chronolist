@@ -1,0 +1,16 @@
+{
+  "name": "chronolist",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Simple chronological sign-up list (max 20)",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "NODE_ENV=development node server.js"
+  },
+  "dependencies": {
+    "better-sqlite3": "^9.4.3",
+    "cors": "^2.8.5",
+    "express": "^4.19.2"
+  }
+}

@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>ChronoList — Lista por orden de llegada</title>
+  <link rel="stylesheet" href="/styles.css" />
+</head>
+<body>
+  <div class="container">
+    <h1>ChronoList</h1>
+    <p class="subtitle">Apúntate a la lista (máx. 20) y vas por orden cronológico de inscripción.</p>
+
+    <section class="card">
+      <h2>Tu nombre</h2>
+      <form id="join-form">
+        <input type="text" id="name" placeholder="Tu nombre..." maxlength="60" required>
+        <button type="submit">Apuntarme</button>
+        <button id="leave-btn" type="button" class="danger outline">Salir de la lista</button>
+      </form>
+      <p id="me-pos" class="muted"></p>
+    </section>
+
+    <section class="card">
+      <div class="row">
+        <h2>Lista</h2>
+        <div class="spacer"></div>
+        <small id="count"></small>
+      </div>
+      <ol id="list" class="list"></ol>
+    </section>
+
+    <section class="card">
+      <h2>Panel (opcional)</h2>
+      <div class="row">
+        <input type="password" id="adminToken" placeholder="Token admin (x-admin-token)" />
+        <button id="next-btn" class="primary">Pasar al siguiente</button>
+        <button id="reset-btn" class="danger">Resetear lista</button>
+      </div>
+      <p class="muted">Guarda el token en el navegador (localStorage). Solo necesario para “Siguiente” y “Reset”.</p>
+    </section>
+  </div>
+  <script src="/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,17 @@
+# docker-compose.yml
+services:
+  chronolist:
+    build: .
+    container_name: chronolist
+    ports:
+      - "3000:3000"
+    environment:
+      - NODE_ENV=production
+      - ADMIN_TOKEN=please_change_me
+    volumes:
+      # Persist the SQLite database outside the container
+      - chronolist_data:/app/queue.db
+    restart: unless-stopped
+
+volumes:
+  chronolist_data:

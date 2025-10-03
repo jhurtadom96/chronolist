@@ -1,0 +1,15 @@
+# render.yaml - Infrastructure as code for Render.com
+services:
+  - type: web
+    name: chronolist
+    env: node
+    plan: free
+    buildCommand: "npm install"
+    startCommand: "npm start"
+    autoDeploy: true
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: ADMIN_TOKEN
+        sync: false   # set in Dashboard
+    healthCheckPath: /health
